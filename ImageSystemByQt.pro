@@ -25,6 +25,11 @@ HEADERS += \
 FORMS += \
     mainwindow.ui
 
+INCLUDEPATH += D:/opencv/opencv345/opencv/include
+INCLUDEPATH += D:/opencv/opencv345/opencv/include/opencv
+INCLUDEPATH += D:/opencv/opencv345/opencv/include/opencv2
+LIBS += D:/opencv/opencv345/opencv/x86/mingw/lib/libopencv_*.a
+
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin

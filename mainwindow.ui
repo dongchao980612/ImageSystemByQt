@@ -10,6 +10,18 @@
     <height>450</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>720</width>
+    <height>450</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>720</width>
+    <height>450</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>图像处理软件</string>
   </property>
@@ -65,7 +77,30 @@
       <height>340</height>
      </rect>
     </property>
-    <layout class="QFormLayout" name="formLayout_2"/>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <widget class="QLabel" name="label_rgb">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>270</width>
+       <height>340</height>
+      </rect>
+     </property>
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="widget_show_grey" native="true">
     <property name="geometry">
@@ -76,7 +111,19 @@
       <height>340</height>
      </rect>
     </property>
-    <layout class="QFormLayout" name="formLayout"/>
+    <widget class="QLabel" name="label_grey">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>270</width>
+       <height>340</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
    </widget>
    <widget class="QWidget" name="widget_botton" native="true">
     <property name="geometry">
@@ -238,7 +285,7 @@
   </widget>
   <action name="actionRGB2grey">
    <property name="text">
-    <string>RGB转灰度</string>
+    <string>RGB转灰度图片</string>
    </property>
   </action>
   <action name="action_histogram">
