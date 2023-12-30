@@ -6,16 +6,311 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>720</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>图像处理软件</string>
   </property>
-  <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="widget_left" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>120</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QPushButton" name="Button_open">
+       <property name="text">
+        <string>打开图片</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Button_save">
+       <property name="text">
+        <string>保存图片</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget_show_rgb" native="true">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>0</y>
+      <width>270</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout_2"/>
+   </widget>
+   <widget class="QWidget" name="widget_show_grey" native="true">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>0</y>
+      <width>270</width>
+      <height>340</height>
+     </rect>
+    </property>
+    <layout class="QFormLayout" name="formLayout"/>
+   </widget>
+   <widget class="QWidget" name="widget_botton" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>350</y>
+      <width>720</width>
+      <height>60</height>
+     </rect>
+    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="Button_exit">
+       <property name="text">
+        <string>退出系统</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Preferred</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>140</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Button_show_histogram_1">
+       <property name="text">
+        <string>显示灰度直方图</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_2">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="Button_show_histogram_2">
+       <property name="text">
+        <string>显示灰度直方图</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer_4">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Preferred</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>70</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>720</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_grap_process">
+    <property name="title">
+     <string>灰度图像处理</string>
+    </property>
+    <widget class="QMenu" name="menu_gray_transform">
+     <property name="title">
+      <string>灰度变换</string>
+     </property>
+     <widget class="QMenu" name="menu_gray_transform_no_liner">
+      <property name="title">
+       <string>非线性变换</string>
+      </property>
+      <addaction name="action_gray_transform_log"/>
+      <addaction name="action_gray_transform_gamma"/>
+     </widget>
+     <addaction name="action_gray_transform_liner"/>
+     <addaction name="menu_gray_transform_no_liner"/>
+    </widget>
+    <addaction name="actionRGB2grey"/>
+    <addaction name="action_histogram"/>
+    <addaction name="menu_gray_transform"/>
+   </widget>
+   <widget class="QMenu" name="menu_morphology_process">
+    <property name="title">
+     <string>形体学处理</string>
+    </property>
+    <addaction name="action_erode"/>
+    <addaction name="action_dilate"/>
+   </widget>
+   <widget class="QMenu" name="menu_segmentation">
+    <property name="title">
+     <string>图像分割</string>
+    </property>
+    <widget class="QMenu" name="menu_edge">
+     <property name="title">
+      <string>边缘分割</string>
+     </property>
+     <addaction name="action_edge_Sobel"/>
+     <addaction name="action_edge_Canny"/>
+    </widget>
+    <widget class="QMenu" name="menu_threshold_seg">
+     <property name="title">
+      <string>阈值分割</string>
+     </property>
+     <addaction name="action_threshold_seg_fixed_threshold"/>
+     <addaction name="action_threshold_seg_unfixed_threshold"/>
+    </widget>
+    <addaction name="menu_threshold_seg"/>
+    <addaction name="action_area_growth"/>
+    <addaction name="menu_edge"/>
+   </widget>
+   <widget class="QMenu" name="menu_filtering">
+    <property name="title">
+     <string>图像滤波</string>
+    </property>
+    <addaction name="action_mean_filtering"/>
+    <addaction name="action_median_filtering"/>
+    <addaction name="action_gaussian_filtering"/>
+   </widget>
+   <widget class="QMenu" name="menu_face_detection">
+    <property name="title">
+     <string>人脸检测</string>
+    </property>
+   </widget>
+   <addaction name="menu_grap_process"/>
+   <addaction name="menu_morphology_process"/>
+   <addaction name="menu_segmentation"/>
+   <addaction name="menu_filtering"/>
+   <addaction name="menu_face_detection"/>
+  </widget>
+  <action name="actionRGB2grey">
+   <property name="text">
+    <string>RGB转灰度</string>
+   </property>
+  </action>
+  <action name="action_histogram">
+   <property name="text">
+    <string>直方图均衡化</string>
+   </property>
+  </action>
+  <action name="action_gray_transform_liner">
+   <property name="text">
+    <string>线性变换</string>
+   </property>
+  </action>
+  <action name="action_gray_transform_log">
+   <property name="text">
+    <string>对数变换</string>
+   </property>
+  </action>
+  <action name="action_gray_transform_gamma">
+   <property name="text">
+    <string>伽马变换</string>
+   </property>
+  </action>
+  <action name="action_erode">
+   <property name="text">
+    <string>腐蚀</string>
+   </property>
+  </action>
+  <action name="action_dilate">
+   <property name="text">
+    <string>膨胀</string>
+   </property>
+  </action>
+  <action name="action_area_growth">
+   <property name="text">
+    <string>区域生长</string>
+   </property>
+  </action>
+  <action name="action_edge_Sobel">
+   <property name="text">
+    <string>Sobel算子</string>
+   </property>
+  </action>
+  <action name="action_edge_Canny">
+   <property name="text">
+    <string>Canny算子</string>
+   </property>
+  </action>
+  <action name="action_threshold_seg_fixed_threshold">
+   <property name="text">
+    <string>固定阈值</string>
+   </property>
+  </action>
+  <action name="action_threshold_seg_unfixed_threshold">
+   <property name="text">
+    <string>自定义阈值</string>
+   </property>
+  </action>
+  <action name="action_mean_filtering">
+   <property name="text">
+    <string>均值滤波</string>
+   </property>
+  </action>
+  <action name="action_median_filtering">
+   <property name="text">
+    <string>中值滤波</string>
+   </property>
+  </action>
+  <action name="action_gaussian_filtering">
+   <property name="text">
+    <string>高斯滤波</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
