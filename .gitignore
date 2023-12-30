@@ -31,4 +31,5 @@
 *.out
 *.app
 
-ImageSystemByQt.pro.user
+# 忽略Qt项目中的.pro.user文件
+*.pro.user
