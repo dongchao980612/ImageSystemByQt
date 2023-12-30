@@ -35,3 +35,5 @@ Qt图像处理系统，使用Opencv库，完成了图像的灰度变换、形态
 - [MFC-Image](https://github.com/Mouseminar/MFC-Image)
   
 - [MFC-ImageSystem](https://github.com/Mouseminar/MFC-Image)
+
+- [ImageProcess-QT5-opencv](https://github.com/KangKanng/ImageProcess-QT5-opencv)
